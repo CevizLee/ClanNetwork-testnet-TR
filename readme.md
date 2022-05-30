@@ -127,14 +127,13 @@ cland start
 
 ```
 sudo tee /etc/systemd/system/cland.service > /dev/null <<'EOF'
-
 [Unit]
 Description=Clan daemon
 After=network-online.target
 
 [Service]
-User=<your-username>
-ExecStart=/path/to/cland start
+User=root
+ExecStart=/usr/local/bin/cland start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
